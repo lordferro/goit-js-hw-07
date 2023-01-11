@@ -70,3 +70,5 @@ function onGalleryItemClick(evt) {
   );
   modal.show();
 }
+
+

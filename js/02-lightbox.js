@@ -21,7 +21,7 @@ function makeListMarkup(items) {
 const imgEl = document.querySelector('.gallery__image');
 console.log(imgEl);
 
-var lightbox = new SimpleLightbox(".gallery a", {
+new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
 });
