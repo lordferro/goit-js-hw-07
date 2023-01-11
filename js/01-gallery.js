@@ -7,7 +7,7 @@ const galleryRef =
 
 const galleryItemsMarkup =
   makeGalleryMarkup(galleryItems);
-let originalLink = null;
+// let originalLink = null;
 
 //   Insert markup in DOM
 galleryRef.insertAdjacentHTML(
@@ -51,7 +51,7 @@ function onGalleryItemClick(evt) {
     return;
   }
 
-  originalLink = evt.target.dataset.source;
+  const originalLink = evt.target.dataset.source;
 
   const modal = basicLightbox.create(
     `<img width="1400" height="900" src="${originalLink}">`,
@@ -69,4 +69,4 @@ function onGalleryItemClick(evt) {
     }
   );
   modal.show();
-};
+}
