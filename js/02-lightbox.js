@@ -19,7 +19,6 @@ function makeListMarkup(items) {
 }
 
 const imgEl = document.querySelector('.gallery__image');
-console.log(imgEl);
 
 new SimpleLightbox(".gallery a", {
   captionsData: "alt",

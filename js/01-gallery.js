@@ -7,7 +7,6 @@ const galleryRef =
 
 const galleryItemsMarkup =
   makeGalleryMarkup(galleryItems);
-// let originalLink = null;
 
 //   Insert markup in DOM
 galleryRef.insertAdjacentHTML(
@@ -70,5 +69,4 @@ function onGalleryItemClick(evt) {
   );
   modal.show();
 }
-
 
