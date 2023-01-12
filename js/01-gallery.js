@@ -1,6 +1,7 @@
 import { galleryItems } from "./gallery-items.js";
 
 // Change code below this line
+let modal = null;
 
 const galleryRef =
   document.querySelector(".gallery");
@@ -41,32 +42,36 @@ function makeGalleryMarkup(items) {
 // delegetion
 function onGalleryItemClick(evt) {
   evt.preventDefault();
-
+  
   if (
-    !evt.target.classList.contains(
-      "gallery__image"
-    )
+    evt.target.nodeName !== "IMG"
   ) {
     return;
   }
 
   const originalLink = evt.target.dataset.source;
 
-  const modal = basicLightbox.create(
+  modal = basicLightbox.create(
     `<img width="1400" height="900" src="${originalLink}">`,
     {
       onShow: () => {
         document.addEventListener(
-          "keydown",
-          (evt) => {
-            if (evt.code === "Escape") {
-              modal.close();
-            }
-          }
+          "keydown", closeModal       
         );
       },
+      onClose: () => {
+        document.removeEventListener(
+          "keydown",
+          closeModal
+        );
+      }
     }
   );
   modal.show();
 }
 
+function closeModal(evt) {
+  if (evt.code === "Escape") {
+    modal.close();
+  }
+}
