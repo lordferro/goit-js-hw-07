@@ -18,9 +18,7 @@ function makeListMarkup(items) {
     .join("");
 }
 
-const imgEl = document.querySelector('.gallery__image');
-
-new SimpleLightbox(".gallery a", {
+new SimpleLightbox(".gallery__item", {
   captionsData: "alt",
   captionDelay: 250,
 });
